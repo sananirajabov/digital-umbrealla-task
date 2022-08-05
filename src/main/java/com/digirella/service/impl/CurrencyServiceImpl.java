@@ -4,7 +4,6 @@ import com.digirella.dto.request.CurrencyRequest;
 import com.digirella.dto.response.ConvertedCurrenciesResponse;
 import com.digirella.dto.response.ConvertedCurrencyResponse;
 import com.digirella.dto.response.CurrenciesResponse;
-import com.digirella.dto.response.CurrencyResponse;
 import com.digirella.exception.EntityAlreadyExistsException;
 import com.digirella.exception.ValidationFailedException;
 import com.digirella.model.Currency;
