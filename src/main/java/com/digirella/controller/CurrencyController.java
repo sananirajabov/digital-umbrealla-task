@@ -42,7 +42,7 @@ public class CurrencyController {
     /**
      *
      */
-    @GetMapping("/{amount}/{currency}/{date}")
+    @GetMapping("/convert/{amount}/{currency}/{date}")
     public ResponseEntity<ConvertedCurrencyResponse> convertAznToTargetCurrencyByDate(@PathVariable String amount,
                                                                                       @PathVariable String currency,
                                                                                       @PathVariable String date) {
@@ -53,7 +53,7 @@ public class CurrencyController {
     /**
      *
      */
-    @GetMapping("/{amount}/{date}")
+    @GetMapping("/convert/{amount}/{date}")
     public ResponseEntity<ConvertedCurrenciesResponse> convertAznToAllCurrenciesByDate(@PathVariable String amount,
                                                                                        @PathVariable String date) {
 
@@ -63,7 +63,7 @@ public class CurrencyController {
     /**
      *
      */
-    @GetMapping("/all/time/{amount}/{currency}")
+    @GetMapping("/convert/all/time/{amount}/{currency}")
     public ResponseEntity<ConvertedCurrenciesResponse> convertAznToTargetCurrencyByAllTime(@PathVariable String amount,
                                                                                            @PathVariable String currency) {
 

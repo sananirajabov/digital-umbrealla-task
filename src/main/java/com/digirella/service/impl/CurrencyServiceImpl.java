@@ -131,8 +131,7 @@ public class CurrencyServiceImpl implements CurrencyService {
         restTemplate.getMessageConverters()
                 .add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
 
-        String EXTERNAL_CURRENCY_API_URL = "https://www.cbar.az/currencies/%s.xml";
-        String url = format(EXTERNAL_CURRENCY_API_URL, date);
+        String url = format("https://www.cbar.az/currencies/%s.xml", date);
 
         ResponseEntity<String> retrievedCurrencies = restTemplate.getForEntity(url, String.class);
 
