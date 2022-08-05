@@ -18,12 +18,12 @@
 
     <properties>
         <java.version>17</java.version>
-        <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
         <jackson-dataformat-xml.version>2.11.1</jackson-dataformat-xml.version>
         <junit-jupiter.version>5.9.0</junit-jupiter.version>
         <mockito.version>4.6.1</mockito.version>
         <rest-assured.version>5.1.1</rest-assured.version>
         <h2-db.version>1.4.200</h2-db.version>
+        <springdoc-openapi-ui.version>1.6.9</springdoc-openapi-ui.version>
     </properties>
 
     <dependencies>
@@ -106,19 +106,10 @@
         </dependency>
 
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc-openapi-ui.version}</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>io.springfox</groupId>-->
-        <!--            <artifactId>springfox-boot-starter</artifactId>-->
-        <!--            <version>${springfox-boot-starter.version}</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>io.springfox</groupId>-->
-        <!--            <artifactId>springfox-swagger-ui</artifactId>-->
-        <!--            <version>${springfox-boot-starter.version}</version>-->
-        <!--        </dependency>-->
     </dependencies>
 
     <build>
