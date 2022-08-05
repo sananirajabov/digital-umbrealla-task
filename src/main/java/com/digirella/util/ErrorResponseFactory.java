@@ -61,16 +61,6 @@ public class ErrorResponseFactory {
                 .build();
     }
 
-    public static ErrorResponse buildCurrencyNotFoundByDate(String date) {
-        String message = format("There is no currencies by date [%s]", date);
-        log.warn(message);
-
-        return ErrorResponse.builder()
-                .errorCode(ENTITY_NOT_FOUND)
-                .message(message)
-                .build();
-    }
-
     public static ErrorResponse buildInvalidAmountError(String amount) {
         String message = format("Amount [%s] should be greater than 0", amount);
         log.warn(message);

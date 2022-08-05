@@ -21,9 +21,9 @@ public class CurrencyMapper {
                 .build();
     }
 
-    public static List<Currency> toCurrencies(List<Valute> valutes, String date) {
-        return valutes.stream()
-                .map(valute -> toCurrency(valute, date))
+    public static List<Currency> toCurrencies(List<Valute> currencies, String date) {
+        return currencies.stream()
+                .map(currency -> toCurrency(currency, date))
                 .toList();
     }
 
