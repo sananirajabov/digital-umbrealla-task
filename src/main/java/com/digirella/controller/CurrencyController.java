@@ -44,6 +44,11 @@ public class CurrencyController {
     /**
      *
      */
+    @Operation(description = "Delete Currencies by Date")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "Currencies deleted successfully"),
+            @ApiResponse(responseCode = "400", description = "Validation failed: INVALID_DATE")
+    })
     @DeleteMapping("/{date}")
     public ResponseEntity<Void> deleteCurrenciesByDate(@PathVariable String date) {
         currencyService.deleteCurrenciesByGivenDate(date);
@@ -53,6 +58,12 @@ public class CurrencyController {
     /**
      *
      */
+    @Operation(description = "Convert AZN Currency To Target Currency by Date")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Converted successfully"),
+            @ApiResponse(responseCode = "400", description = "Validation failed: "
+                    + "INVALID_DATE, ENTITY_NOT_FOUND, INVALID_AMOUNT")
+    })
     @GetMapping("/convert/{amount}/{currency}/{date}")
     public ResponseEntity<ConvertedCurrencyResponse> convertAznToTargetCurrencyByDate(@PathVariable String amount,
                                                                                       @PathVariable String currency,
@@ -64,6 +75,12 @@ public class CurrencyController {
     /**
      *
      */
+    @Operation(description = "Convert AZN Currency To All Currencies by Date")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Converted successfully"),
+            @ApiResponse(responseCode = "400", description = "Validation failed: "
+                    + "INVALID_DATE, INVALID_AMOUNT")
+    })
     @GetMapping("/convert/{amount}/{date}")
     public ResponseEntity<ConvertedCurrenciesResponse> convertAznToAllCurrenciesByDate(@PathVariable String amount,
                                                                                        @PathVariable String date) {
@@ -74,6 +91,11 @@ public class CurrencyController {
     /**
      *
      */
+    @Operation(description = "Convert AZN Currency To Target Currency by Date")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Converted successfully"),
+            @ApiResponse(responseCode = "400", description = "Validation failed: INVALID_AMOUNT")
+    })
     @GetMapping("/convert/all/time/{amount}/{currency}")
     public ResponseEntity<ConvertedCurrenciesResponse> convertAznToTargetCurrencyByAllTime(@PathVariable String amount,
                                                                                            @PathVariable String currency) {
