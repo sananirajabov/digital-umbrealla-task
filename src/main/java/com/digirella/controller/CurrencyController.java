@@ -16,9 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.xml.bind.JAXBException;
 
 /**
- *
+ * Represents the interface for Currency entity manipulation.
  */
-
 @Tag(name = "Currency Controller")
 @RequiredArgsConstructor
 @RestController
@@ -28,7 +27,10 @@ public class CurrencyController {
     private final CurrencyService currencyService;
 
     /**
+     * Save currencies from an external API
      *
+     * @param currencyRequest the details of currencies
+     * @return saved currencies
      */
     @Operation(description = "Save Currencies by Date")
     @ApiResponses(value = {
@@ -42,7 +44,9 @@ public class CurrencyController {
     }
 
     /**
+     * Delete currencies by given date
      *
+     * @param date the details of currencies
      */
     @Operation(description = "Delete Currencies by Date")
     @ApiResponses(value = {
@@ -56,7 +60,12 @@ public class CurrencyController {
     }
 
     /**
+     * Convert AZN Currency to target currency by given date
      *
+     * @param amount   the amount to be converted
+     * @param currency the currency to be converted from AZN
+     * @param date     the date of target currency
+     * @return converted currency
      */
     @Operation(description = "Convert AZN Currency To Target Currency by Date")
     @ApiResponses(value = {
@@ -73,7 +82,11 @@ public class CurrencyController {
     }
 
     /**
+     * Convert AZN Currency to all currencies by given date
      *
+     * @param amount the amount to be converted
+     * @param date   the date of target currency
+     * @return converted currencies
      */
     @Operation(description = "Convert AZN Currency To All Currencies by Date")
     @ApiResponses(value = {
@@ -89,7 +102,11 @@ public class CurrencyController {
     }
 
     /**
+     * Convert AZN Currency to target currency by all time
      *
+     * @param amount   the amount to be converted
+     * @param currency the currency to be converted from AZN
+     * @return converted currencies
      */
     @Operation(description = "Convert AZN Currency To Target Currency by Date")
     @ApiResponses(value = {
