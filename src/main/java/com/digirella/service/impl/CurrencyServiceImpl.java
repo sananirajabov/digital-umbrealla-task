@@ -33,8 +33,8 @@ import static com.digirella.mapper.CurrencyMapper.toCurrenciesResponse;
 import static com.digirella.util.ErrorResponseFactory.*;
 import static java.lang.String.format;
 
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class CurrencyServiceImpl implements CurrencyService {
 
     private final RestTemplate restTemplate;
@@ -189,3 +189,4 @@ public class CurrencyServiceImpl implements CurrencyService {
         return numericAmount;
     }
 }
+
